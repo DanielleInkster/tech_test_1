@@ -87,4 +87,5 @@ I would like users to recieve an error message if they try to deposit/withdraw n
 > rspec # Run the tests to ensure it works
 > rubocop # Check code quality
 ```
-## Use
+## Test Coverage
+![Rspec coverage](images/rspec.png "Rspec Coverage)
