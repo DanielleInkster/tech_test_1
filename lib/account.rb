@@ -38,7 +38,6 @@ class Account
     fail 'Please enter a valid amount' if num < 0 
   end
 
-
   def create_deposit_transaction(num)
     transaction = {
       date: Time.now.strftime('%Y-%d-%m'),
