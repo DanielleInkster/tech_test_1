@@ -17,6 +17,7 @@ class Statement
     })
     # rubocop:disable LineLength - linelength 94 chars
     puts arr.collect { |p| "#{p[:date]} || #{p[:credit]} || #{p[:debit]} || #{p[:balance]}" } 
+    return "end statement"
     # rubocop:enable LineLength
   end
 
