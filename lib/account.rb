@@ -3,17 +3,20 @@
 # frozen_string_literal: true.
 # Account
 class Account
-  attr_accessor :balance
+  attr_accessor :balance, :transactions
 
   def initialize
     @balance = 0
+    @transactions = []
   end
 
-  def deposit(num)
+  private
+
+  def add(num)
     @balance += num
   end
 
-  def withdraw(num)
+  def subtract(num)
     @balance -= num
   end
 end
