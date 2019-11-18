@@ -22,11 +22,6 @@ describe Account do
       message = 'Please enter a valid amount'
       expect { account.deposit(-10) }.to raise_error message
     end
-
-    it 'creates a hash of the deposit transaction' do
-      account.deposit(500)
-      expect(account.transactions.list).to include(date: Time.now.strftime('%Y-%d-%m'), credit: "500.00", debit: "", balance: "500.00")
-    end
   end
 
   describe '#withdrawal' do
@@ -47,11 +42,6 @@ describe Account do
     it 'will not let a user withdraw more than the balance' do
       message = 'Withdrawal request exceeds balance'
       expect { account.withdrawal(600) }.to raise_error message
-    end
-
-    it 'creates a hash of the withdrawal transaction' do
-      account.withdrawal(250)
-      expect(account.transactions.list).to include(date: Time.now.strftime('%Y-%d-%m'), credit: "", debit: "250.00", balance: "250.00")
     end
   end
 end

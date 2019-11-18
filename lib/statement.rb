@@ -1,4 +1,5 @@
 require_relative 'account'
+require_relative 'transactions'
 
 class Statement
   attr_accessor :account
@@ -8,7 +9,7 @@ class Statement
   end
 
   def print
-    arr = account.transactions.reverse
+    arr = @account.transactions.list.reverse
     create_heading(arr)
     # rubocop:disable LineLength - linelength 94 chars
     puts arr.collect { |p| "#{p[:date]} || #{p[:credit]} || #{p[:debit]} || #{p[:balance]}" } 
@@ -26,6 +27,4 @@ class Statement
       balance: "balance"
     })
   end
-
-
 end

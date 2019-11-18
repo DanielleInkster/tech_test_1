@@ -4,9 +4,9 @@ require_relative 'transactions'
 class Account
   attr_accessor :balance, :transactions
 
-  def initialize(balance = 0)
+  def initialize(balance = 0, transactions = Transactions.new)
     @balance = balance
-    @transactions = Transactions.new
+    @transactions = transactions
   end
 
   def deposit(num)
