@@ -70,7 +70,7 @@ I would like users to recieve an error message if they try to deposit/withdraw n
 ```
 
 ## Technologies
-* Ruby 2.4.2
+* Ruby 2.2.3
 * Rspec
 * Rubocop 0.56.0
 * Simplecov
@@ -87,4 +87,14 @@ I would like users to recieve an error message if they try to deposit/withdraw n
 > rspec # Run the tests to ensure it works
 > rubocop # Check code quality
 ```
-## Use
+## Test Coverage
+![Rspec/SimpleCov coverage](images/rspec.png "Rspec/SimpleCov Coverage")
+![Rubocop](images/rubocop.png "Rubocop")
+
+## Usage
+![Using an account](images/pic1.png "Using an Account")
+![Viewing statement](images/pic2.png "Viewing statement")
+
+## Edge Cases
+![Depositing an invalid amount](images/edgecase1.png "Depositing an Invalid amount")
+![Withdrawing more than the balance](images/edgecase2.png "Withdrawing more than the balance")
