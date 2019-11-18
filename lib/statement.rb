@@ -15,7 +15,9 @@ class Statement
       debit: "debit",
       balance: "balance"
     })
-    puts arr.collect { |p| "#{p[:date]} || #{p[:credit]} || #{p[:debit]} || #{p[:balance]}" }
+    # rubocop:disable LineLength - linelength 94 chars
+    puts arr.collect { |p| "#{p[:date]} || #{p[:credit]} || #{p[:debit]} || #{p[:balance]}" } 
+    # rubocop:enable LineLength
   end
 
 end

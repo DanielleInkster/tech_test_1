@@ -9,14 +9,16 @@ class Account
   end
 
   def deposit(num)
+    valid_amount?(num)
     add(num)
     create_deposit_transaction(num)
     "Deposit of #{'%.2f' % num} complete"
   end
 
   def withdrawal(num)
-    raise 'Withdrawal request exceeds balance' if @balance < num
+    fail 'Withdrawal request exceeds balance' if @balance < num
 
+    valid_amount?(num)
     subtract(num)
     create_withdrawal_transaction(num)
     "Withdrawal of #{'%.2f' % num} complete"
@@ -31,6 +33,11 @@ class Account
   def subtract(num)
     @balance -= num
   end
+
+  def valid_amount?(num)
+    fail 'Please enter a valid amount' if num < 0 
+  end
+
 
   def create_deposit_transaction(num)
     transaction = {

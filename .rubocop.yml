@@ -52,6 +52,9 @@ Metrics/BlockLength:
     - 'spec/**/*'
     - 'test/**/*'
 
+Lint/AmbiguousBlockAssociation:
+  Enabled: false 
+
 # Code Style
 # ==========
 #

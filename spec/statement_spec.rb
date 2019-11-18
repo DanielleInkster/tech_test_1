@@ -1,8 +1,7 @@
 require 'statement'
 
 describe Statement do
-  account = Account.new
-  account.deposit(500)
+  let(:account)       { double('account', transactions: [{ date: Time.now.strftime('%Y-%d-%m'), credit: "500.00", debit: "", balance: "500.00" }]) }
   subject(:statement) { described_class.new(account) }
 
   it 'initializes with an account' do

@@ -18,6 +18,11 @@ describe Account do
       expect(account.balance).to eq 500
     end
 
+    it 'will not let a user deposit a negative amount' do
+      message = 'Please enter a valid amount'
+      expect { account.deposit(-10) }.to raise_error message
+    end
+
     it 'creates a hash of the deposit transaction' do
       account.deposit(500)
       expect(account.transactions).to include(date: Time.now.strftime('%Y-%d-%m'), credit: "500.00", debit: "", balance: "500.00")
@@ -28,9 +33,15 @@ describe Account do
     before(:each) do
       account.balance = 500
     end
+
     it 'takes money from the balance' do
       account.withdrawal(250)
       expect(account.balance).to eq 250
+    end
+
+    it 'will not let a user withdraw a negative amount' do
+      message = 'Please enter a valid amount'
+      expect { account.withdrawal(-10) }.to raise_error message
     end
 
     it 'will not let a user withdraw more than the balance' do
