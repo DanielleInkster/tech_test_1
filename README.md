@@ -89,3 +89,12 @@ I would like users to recieve an error message if they try to deposit/withdraw n
 ```
 ## Test Coverage
 ![Rspec coverage](images/rspec.png "Rspec Coverage")
+![Rubocop](images/rubocop.png "Rubocop")
+
+## Usage
+![Using an account](images/pic1.png "Using an Account")
+![Viewing statement](images/pic2.png "Viewing statement")
+
+## Edge Cases
+![Depositing an invalid amount](images/edgecase1.png "Depositing an Invalid amount")
+![Withdrawing more than the balance](images/edgecase2.png "Withdrawing more than the balance")
