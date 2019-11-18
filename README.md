@@ -70,7 +70,7 @@ I would like users to recieve an error message if they try to deposit/withdraw n
 ```
 
 ## Technologies
-* Ruby 2.4.2
+* Ruby 2.2.3
 * Rspec
 * Rubocop 0.56.0
 * Simplecov
@@ -88,7 +88,7 @@ I would like users to recieve an error message if they try to deposit/withdraw n
 > rubocop # Check code quality
 ```
 ## Test Coverage
-![Rspec coverage](images/rspec.png "Rspec Coverage")
+![Rspec/SimpleCov coverage](images/rspec.png "Rspec/SimpleCov Coverage")
 ![Rubocop](images/rubocop.png "Rubocop")
 
 ## Usage
