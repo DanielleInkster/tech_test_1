@@ -13,6 +13,14 @@ describe Account do
     expect(subject.transactions.length).to eq 0
   end
 
+    describe '#deposit' do
+    it 'creates a hash of the deposit transaction' do
+      account = Account.new
+      account.deposit(500)
+      expect(account.transactions).to include({:date=> Time.now.strftime("%Y-%d-%m"), :credit=> 500, :debit=>0, :balance=> account.balance})
+    end
+  end
+
   #moved to private methods
   # describe '#add' do
   #   it 'allows a user to deposit money into their account' do
