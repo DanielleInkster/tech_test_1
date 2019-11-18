@@ -35,19 +35,19 @@ class Account
   def create_deposit_transaction(num)
     transaction = {
       date: Time.now.strftime('%Y-%d-%m'),
-      credit: num,
-      debit: 0,
-      balance: @balance
+      credit: '%.2f' % num,
+      debit: "",
+      balance: '%.2f' % @balance
     }
     transactions.push(transaction)
   end
 
   def create_withdrawal_transaction(num)
     transaction = {
-      date: Time.now.strftime('%Y-%d-%m'),
-      credit: 0,
-      debit: num,
-      balance: @balance
+      :date => Time.now.strftime('%Y-%d-%m'),
+      :credit => "",
+      :debit => '%.2f' % num,
+      :balance => '%.2f' % @balance
     }
     transactions.push(transaction)
   end

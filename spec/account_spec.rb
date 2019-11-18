@@ -20,7 +20,7 @@ describe Account do
 
     it 'creates a hash of the deposit transaction' do
       account.deposit(500)
-      expect(account.transactions).to include(date: Time.now.strftime('%Y-%d-%m'), credit: 500, debit: 0, balance: 500)
+      expect(account.transactions).to include(date: Time.now.strftime('%Y-%d-%m'), credit: "500.00", debit: "", balance: "500.00")
     end
   end
 
@@ -40,7 +40,7 @@ describe Account do
 
     it 'creates a hash of the withdrawal transaction' do
       account.withdrawal(250)
-      expect(account.transactions).to include(date: Time.now.strftime('%Y-%d-%m'), credit: 0, debit: 250, balance: 250)
+      expect(account.transactions).to include(date: Time.now.strftime('%Y-%d-%m'), credit: "", debit: "250.00", balance: "250.00")
     end
   end
 end
