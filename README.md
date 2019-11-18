@@ -88,4 +88,4 @@ I would like users to recieve an error message if they try to deposit/withdraw n
 > rubocop # Check code quality
 ```
 ## Test Coverage
-![Rspec coverage](images/rspec.png "Rspec Coverage)
+![Rspec coverage](images/rspec.png "Rspec Coverage")
