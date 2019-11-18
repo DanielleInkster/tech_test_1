@@ -4,7 +4,7 @@ source 'https://rubygems.org'
 
 gem 'rspec'
 
-gem 'rubocop'
+gem 'rubocop', '0.74.0'
 
 git_source(:github) { |repo_name| "https://github.com/#{repo_name}" }
 
