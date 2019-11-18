@@ -16,4 +16,13 @@ describe Account do
       expect(account.balance).to eq 500
     end
   end
+
+  describe '#withdrawal' do
+    it 'allows a user to withdraw money from their account' do
+      account = Account.new
+      account.deposit(500)
+      account.withdraw(250)
+      expect(account.balance).to eq 250
+    end
+  end
 end
