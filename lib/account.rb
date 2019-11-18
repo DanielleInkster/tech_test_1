@@ -1,11 +1,12 @@
 require 'date'
+require_relative 'transactions'
 
 class Account
   attr_accessor :balance, :transactions
 
-  def initialize
-    @balance = 0
-    @transactions = []
+  def initialize(balance = 0)
+    @balance = balance
+    @transactions = Transactions.new
   end
 
   def deposit(num)
@@ -45,7 +46,7 @@ class Account
       debit: "",
       balance: '%.2f' % @balance
     }
-    transactions.push(transaction)
+    @transactions.list.push(transaction)
   end
 
   def create_withdrawal_transaction(num)
@@ -55,6 +56,6 @@ class Account
       :debit => '%.2f' % num,
       :balance => '%.2f' % @balance
     }
-    transactions.push(transaction)
+    @transactions.list.push(transaction)
   end
 end

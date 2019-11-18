@@ -62,6 +62,7 @@
       ],
       "/Users/danielleinkster/Projects/makers/week9/bank/tech_test_1/lib/account.rb": [
         1,
+        1,
         null,
         1,
         1,
@@ -122,6 +123,18 @@
         null,
         null
       ],
+      "/Users/danielleinkster/Projects/makers/week9/bank/tech_test_1/lib/transactions.rb": [
+        1,
+        null,
+        1,
+        1,
+        null,
+        1,
+        10,
+        null,
+        null,
+        null
+      ],
       "/Users/danielleinkster/Projects/makers/week9/bank/tech_test_1/spec/statement_spec.rb": [
         1,
         null,
@@ -175,8 +188,19 @@
         null,
         null,
         null
+      ],
+      "/Users/danielleinkster/Projects/makers/week9/bank/tech_test_1/spec/transactions_spec.rb": [
+        1,
+        null,
+        1,
+        2,
+        null,
+        1,
+        1,
+        null,
+        null
       ]
     },
-    "timestamp": 1574110258
+    "timestamp": 1574112215
   }
 }
