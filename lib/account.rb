@@ -1,8 +1,5 @@
-# frozen_string_literal: true
-
-# frozen_string_literal: true.
 require 'date'
-# Account
+
 class Account
   attr_accessor :balance, :transactions
 
@@ -14,14 +11,15 @@ class Account
   def deposit(num)
     add(num)
     create_deposit_transaction(num)
-    return "Deposit of #{'%.2f' % num} complete"
+    "Deposit of #{'%.2f' % num} complete"
   end
 
   def withdrawal(num)
-    fail "Withdrawal request exceeds balance" if @balance < num
+    raise 'Withdrawal request exceeds balance' if @balance < num
+
     subtract(num)
     create_withdrawal_transaction(num)
-    return "Withdrawal of #{'%.2f' % num} complete"
+    "Withdrawal of #{'%.2f' % num} complete"
   end
 
   private

@@ -1,6 +1,3 @@
-# frozen_string_literal: true
-
-# frozen_string_literal: true.
 
 require 'account'
 
@@ -37,8 +34,8 @@ describe Account do
     end
 
     it 'will not let a user withdraw more than the balance' do
-      message = "Withdrawal request exceeds balance"
-      expect{account.withdrawal(600)}.to raise_error message
+      message = 'Withdrawal request exceeds balance'
+      expect { account.withdrawal(600) }.to raise_error message
     end
 
     it 'creates a hash of the withdrawal transaction' do
