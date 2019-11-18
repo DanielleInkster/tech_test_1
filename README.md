@@ -1,6 +1,7 @@
-# Bank tech test - Week 10
+# Tech Test #1 - Week 10
+ ## Bank Account
 
-## Project Description
+## Project Description from Makers
 
 Today, you'll practice doing a tech test.
 
@@ -33,3 +34,57 @@ date || credit || debit || balance
 13/01/2012 || 2000.00 || || 3000.00
 10/01/2012 || 1000.00 || || 1000.00
 ```
+### User Stories
+#### ***created by developer based on requirements and acceptance criteria***
+```
+As a bank account holder 
+So that I can save money
+I want to be able to deposit money into my account
+
+As a bank account holder 
+So that I can buy the things I need
+I want to be able to withdraw money from my account
+
+As a bank account holder 
+So that I don't overspend
+I want to be able to view my balance
+
+As a bank account holder 
+So that I can track my withdrawals and deposits
+I want to be able to view the date of each transaction
+
+As a bank account holder 
+So that I can manage my finances
+I want to be able to print a record of my transactions
+```
+### User stories for edge cases
+#### ***created by developer based on requirements, acceptance criteria and common sense***
+```
+As a bank account holder 
+So that I don't overspend
+I want to recieve an error message if I try to withdraw more than my balance
+
+As a bank manager
+So that money isn't stolen or lost
+I would like users to recieve an error message if they try to deposit/withdraw negative amounts.
+```
+
+## Technologies
+* Ruby 2.4.2
+* Rspec
+* Rubocop 0.56.0
+* Simplecov
+
+## How to Install and Run
+```bash
+> git clone git@github.com:DanielleInkster/tech_test_1.git
+> bundle install
+> irb
+> require './lib/statement.rb'
+```
+### How to Run Tests
+```bash
+> rspec # Run the tests to ensure it works
+> rubocop # Check code quality
+```
+## Use
