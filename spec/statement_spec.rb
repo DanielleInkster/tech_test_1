@@ -2,8 +2,8 @@ require 'statement'
 
 describe Statement do
   subject(:statement) { described_class.new }
-  let(:transaction1)       { double('transaction', list: [{ date: "2019-18-11", credit: "500.00", debit: "", balance: "500.00" }]) }
-  let(:account)       { double('account', transactions: transaction1) }
+  let(:transaction1) { double('transaction', list: [{ date: "2019-18-11", credit: "500.00", debit: "", balance: "500.00" }]) }
+  let(:account) { double('account', transactions: transaction1) }
 
   it 'initializes with an account' do
     expect(statement.account.nil?).to eq false
