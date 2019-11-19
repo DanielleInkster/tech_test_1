@@ -1,7 +1,7 @@
 require_relative 'account'
 require_relative 'transactions'
 
-class Statement_Viewer
+class StatementViewer
   attr_accessor :account
 
   def initialize(account = Account.new)
