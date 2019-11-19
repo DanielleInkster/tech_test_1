@@ -1,7 +1,7 @@
 require_relative 'account'
 require_relative 'transactions'
 
-class Statement
+class Statement_Viewer
   attr_accessor :account
 
   def initialize(account = Account.new)
@@ -12,7 +12,7 @@ class Statement
     arr = @account.transactions.list.reverse
     create_heading(arr)
     # rubocop:disable LineLength - linelength 94 chars
-    puts arr.collect { |p| "#{p[:date]} || #{p[:credit]} || #{p[:debit]} || #{p[:balance]}" } 
+    puts arr.collect { |p| "#{p[:date]} || #{p[:credit]} || #{p[:debit]} || #{p[:balance]}\n" } 
     return "end statement"
     # rubocop:enable LineLength
   end
