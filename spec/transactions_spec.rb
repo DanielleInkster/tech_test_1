@@ -1,21 +1,31 @@
 require 'transactions'
 
 describe Transactions do
-  subject(:transactions) { described_class.new }
-  let(:transaction1)       { double('transaction', list: [{ date: "2019-18-11", credit: "500.00", debit: "", balance: "500.00" }]) }
-  let(:transaction2)       { double('transaction', list: [{ date: "2019-18-11", credit: "", debit: "250.00", balance: "250.00" }]) }
-  let(:account) { double('account', transactions: transaction1) }
-  let(:account2)       { double('account2', transactions: transaction2) }
+  subject(:transaction) { described_class.new }
 
-  it 'initializes with an empty array' do
-    expect(transactions.list.length).to eq 0
+  it 'initializes with a TransactionRecord' do
+    expect(transaction.record.nil?).to eq false
   end
 
-  it 'stores a hash of the deposit transaction' do
-    expect(account.transactions.list).to eq([{ :date => "2019-18-11", :credit => "500.00", :debit => "", :balance => "500.00" }])
+  describe '#create_deposit_transaction' do
+    it 'responds to create_deposit_transaction' do
+      expect(transaction).to respond_to(:create_deposit_transaction).with(1).argument
+    end
+
+    it 'creates a hash of a deposit transaction' do
+      transaction.create_deposit_transaction(500)
+      expect(transaction.record.list[0]).to include(:credit => "500.00")
+    end
   end
 
-  it 'stores a hash of the withdrawal transaction' do
-    expect(account2.transactions.list).to eq([{ :date => "2019-18-11", :credit => "", :debit => "250.00", :balance => "250.00" }])
+    describe '#create_deposit_transaction' do
+    it 'responds to create_withdrawal_transaction' do
+      expect(transaction).to respond_to(:create_withdrawal_transaction).with(1).argument
+    end
+
+    it 'creates a hash of a withdrawal transaction' do
+      transaction.create_withdrawal_transaction(500)
+      expect(transaction.record.list[0]).to include(:debit => "500.00")
+    end
   end
 end

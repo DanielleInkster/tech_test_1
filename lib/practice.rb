@@ -1,10 +1,10 @@
-require_relative 'statement'
+require_relative 'statement_viewer'
 
 account = Account.new
 
 p account.deposit(500)
 p account.withdrawal(300)
 
-statement = Statement.new(account)
+statement = StatementViewer.new(account)
 
 p statement.print

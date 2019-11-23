@@ -1,5 +1,6 @@
 require 'date'
 require_relative 'transactions'
+require_relative 'transactions_record'
 
 class Account
   attr_accessor :balance, :transactions
@@ -12,7 +13,8 @@ class Account
   def deposit(num)
     valid_amount?(num)
     add(num)
-    create_deposit_transaction(num)
+    @transactions.create_deposit_transaction(num)
+    @transactions.record.list[-1][:balance] = ('%.2f' % @balance)
     "Deposit of #{'%.2f' % num} complete"
   end
 
@@ -21,7 +23,8 @@ class Account
 
     valid_amount?(num)
     subtract(num)
-    create_withdrawal_transaction(num)
+    @transactions.create_withdrawal_transaction(num)
+    @transactions.record.list[-1][:balance] = ('%.2f' % @balance)
     "Withdrawal of #{'%.2f' % num} complete"
   end
 
@@ -37,25 +40,5 @@ class Account
 
   def valid_amount?(num)
     fail 'Please enter a valid amount' if num < 0 
-  end
-
-  def create_deposit_transaction(num)
-    transaction = {
-      date: Time.now.strftime('%Y-%d-%m'),
-      credit: '%.2f' % num,
-      debit: "",
-      balance: '%.2f' % @balance
-    }
-    @transactions.list.push(transaction)
-  end
-
-  def create_withdrawal_transaction(num)
-    transaction = {
-      :date => Time.now.strftime('%Y-%d-%m'),
-      :credit => "",
-      :debit => '%.2f' % num,
-      :balance => '%.2f' % @balance
-    }
-    @transactions.list.push(transaction)
   end
 end
