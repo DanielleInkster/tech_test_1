@@ -18,7 +18,7 @@ describe Transactions do
     end
   end
 
-    describe '#create_deposit_transaction' do
+  describe '#create_deposit_transaction' do
     it 'responds to create_withdrawal_transaction' do
       expect(transaction).to respond_to(:create_withdrawal_transaction).with(1).argument
     end
